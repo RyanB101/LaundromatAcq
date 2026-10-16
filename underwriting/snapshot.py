@@ -20,6 +20,8 @@ CASES = [
     ("Revenue 10% below the P&L", {"SelfServe": 194400, "WFLbsMonth": 7200}),
     ("Ryan works 0 hrs (fully absentee)", {"OwnerHours": 0}),
     ("No lease renewal (exit value $0)", {"ExitMult": 0}),
+    ("Your plan: you 22 hrs/wk Yr 1, ~10 after; day manager from Yr 2", {"OwnerHours": 22, "OwnerHoursLater": 10, "MgrHours": 40}),
+    ("Your plan + staffed delivery/commercial (5,000 lb/mo)", {"OwnerHours": 22, "OwnerHoursLater": 10, "MgrHours": 40, "DelivLbsRamp": 2000, "DelivLbsFull": 5000}),
     ("Broker's expense assumptions", {"Wage": 16.5, "Burden": 0, "Insurance": 2880, "RepairsYr1": 5400, "UtilCont": 0,
                                       "AncRealize": 1, "ProFees": 0, "Licenses": 0, "PayrollSvc": 0, "Marketing": 0, "ContPct": 0}),
 ]
