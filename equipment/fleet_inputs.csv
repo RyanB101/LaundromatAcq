@@ -1,7 +1,5 @@
 machine_type,size_lb,count,est_age_yrs,replace_cost_installed,useful_life_yrs,annual_repair_new,annual_revenue_per_unit,annual_utility_per_unit,kind
-front_load_washer,20,12,12,7500,15,150,6500,2600,washer
-front_load_washer,40,8,12,12000,15,250,9000,4200,washer
-front_load_washer,60,4,12,19000,15,350,12000,6000,washer
-front_load_washer,80,2,12,26000,15,450,14000,7500,washer
-stack_dryer_pockets,30,14,12,9500,22,200,7000,2200,dryer
-single_dryer,75,4,12,9000,22,200,6000,2500,dryer
+front_load_washer,20,13,15,7500,15,150,2240,660,washer
+front_load_washer,40,15,15,12000,15,250,4480,1320,washer
+front_load_washer,60,5,15,19000,15,350,6720,1980,washer
+stack_dryer_30lb_double,30,17,15,9500,22,200,5060,1800,dryer

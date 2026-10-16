@@ -1,6 +1,6 @@
 # Equipment: repair or replace (Jersey City laundromat)
 
-Status: **framework done, fleet still a placeholder.** No photos, listing or equipment list were in the project as of 2026-10-16. Every dollar figure below that depends on the actual machines comes from a placeholder fleet (`fleet_inputs.csv`: 26 washers, 14 stack dryers, 4 large dryers, all assumed 12 years old) and industry price estimates. Swap in the real machines from the data plates and rerun `python3 model.py`.
+Status: **fleet now taken from the likely listing (BizBuySell #2564518, not yet confirmed as yours).** The listing gives 33 washers (13 x 20 lb, 15 x 40 lb, 5 x 60 lb) and 34 dryers listed as "30 lb double-stack", all about 15 years old, brands not stated. I read "34 units" as 34 pockets (17 stacks). If it means 34 stacks, a full retool costs about $160k more. Revenue per machine is split from the listing's ~$4,150/week self-serve. Utility cost per machine is an estimate (about 20% of revenue). Brands, exact ages and condition still need the data plate photos.
 
 Files in this folder:
 - `fleet_inputs.csv`: one row per machine type (count, age, installed cost, life, repair, revenue, utility). Edit this.
@@ -16,19 +16,22 @@ Files in this folder:
 4. **New Jersey doesn't follow federal bonus.** NJ Gross Income Tax allows only a $25,000 Sec. 179 deduction and recovers the rest over regular MACRS lives ([Monaco CPA summary of GIT-DEP](https://www.monacocpa.cpa/post/section-179-bonus-depreciation-nj)). Budget for a separate NJ depreciation schedule.
 5. **What actually decides it is fleet age and revenue, not tax.** On the placeholder fleet, the three strategies land within about 2% of each other on an after-tax present-value basis. Fleet age swings the answer (table below). New machines pay off through lower water, sewer and gas, fewer broken machines, and the ability to raise vend prices or add larger pockets, not through the write-off.
 
-## 2. Model results (placeholder fleet, after-tax PV of 17 years of equipment cost, lower is better)
+## 2. Model results (listing fleet, after-tax PV of 17 years of equipment cost, lower is better)
 
-| Revenue uplift from new washers | Fleet age 6 yrs | Fleet age 12 yrs | Fleet age 18 yrs |
+| Scenario | Run to failure | Washers now, dryers as they fail | Retool now |
 |---|---|---|---|
-| 0% | **Run to failure** ($968k) | **Retool now** ($1,067k) vs. run to failure $1,075k | **Retool now** ($1,067k) vs. $1,090k |
-| 5% | **Run to failure** ($940k) vs. retool $1,032k | **Retool now** ($1,032k) vs. $1,047k | **Retool now** ($1,032k) vs. $1,055k |
-| 10% | **Run to failure** ($911k) vs. retool $997k | **Retool now** ($997k) vs. $1,019k | **Retool now** ($997k) vs. $1,020k |
+| Base: 15-yr washer life, 5% revenue lift | $792k | $802k | **$774k** |
+| No revenue lift | $812k | $823k | **$794k** |
+| 10% revenue lift | $772k | $782k | **$753k** |
+| Washers last 20 yrs, 5% lift | $831k | $797k | **$768k** |
 
-How to read it: if the machines are under ~8 years old, keep and repair them; a full retool would throw away roughly $90k of value. If they're 12+ years old, a retool in year one is modestly cheaper, and more so if new machines let you raise prices. A full retool of this placeholder fleet costs about **$470k installed**; replacing washers only is about **$306k**. Dryers last 20 to 30 years and almost always justify repair, so "washers now, dryers as they fail" is the usual middle path.
+At about 15 years old, this fleet is at or near the end of its economic life, and **retooling in year one is the cheapest option in every case I tested**, by $20k to $60k of present value. Running to failure isn't really an option: it means replacing nearly all washers within a year or two anyway, just unplanned. The full retool costs about **$521k installed** (about $678k if the dryers are 34 stacks). Washers only cost about **$363k**. `capex_schedule.csv` has the timing for each option.
+
+**What this means for the deal:** at $450k asking (2.5 to 3x the $177k cash flow), the price assumes working equipment, but a buyer should expect to spend roughly another $360k to $520k on machines within one to two years. That's a strong argument for a lower price, or for valuing the store as "business plus a retool". It also means little of the price can credibly go to equipment on Form 8594, because 15-year-old machines have low market value. Most of it goes to goodwill, amortized over 15 years, and the big year-one federal write-off comes from the *new* machines instead.
 
 Key assumptions (all editable in `model.py`): 8% discount rate (all-cash, cost of equity); 37% federal and 8.97% NJ marginal rates; repair cost grows 12% per year of age; downtime costs $0.60 of revenue per $1 of repair; new washers use 25% less water and energy; washers last 15 years and dryers 22; no replacements in the last 3 years of the lease; used machines worth 35% of remaining life at lease end.
 
-The 17-year lease fits one replacement cycle well. A retool now gets close to full use of the machines inside the lease. A retool around year 8 to 10 leaves useful life on the floor when the lease ends, unless you renew or sell the store with the equipment.
+The 17-year lease fits one replacement cycle well. A retool now gets nearly full use of the machines inside the lease.
 
 ## 3. When to repair vs. replace a single machine
 
