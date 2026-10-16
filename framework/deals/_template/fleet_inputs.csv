@@ -1,0 +1,5 @@
+machine_type,size_lb,count,est_age_yrs,replace_cost_installed,useful_life_yrs,annual_repair_new,annual_revenue_per_unit,annual_utility_per_unit,kind
+hardmount_washer,20,0,0,7500,18,40,2240,776,washer
+hardmount_washer,40,0,0,12000,18,60,4480,1552,washer
+hardmount_washer,60,0,0,19000,18,80,6720,2328,washer
+stack_dryer_30lb_double,30,0,0,9500,25,40,4780,1400,dryer

@@ -1,0 +1,74 @@
+{
+ "_how_to": "Copy this folder to deals/<short-name>/, fill every null, delete lines you don't need, then follow framework/model/HOW-TO.md. Values are annual dollars unless the input name says otherwise. Any input listed in HOW-TO.md can be added to 'inputs' to override its generic default.",
+ "name": null,
+ "address": null,
+ "listing": null,
+ "as_of": null,
+ "output": "Underwriting_Model.xlsx",
+ "horizon_years": null,
+ "year1_calendar": 2027,
+ "inputs": {
+  "Price": null,
+  "AllocEquip": null,
+  "AllocLHI": null,
+  "AllocNoncompete": null,
+  "SelfServe": null,
+  "WFLbsMonth": null,
+  "WFPrice": null,
+  "WFPriceNew": null,
+  "DryClean": 0,
+  "ATM": 0,
+  "SoapVend": null,
+  "SnackVend": 0,
+  "GameVend": 0,
+  "RentYr1": null,
+  "RentEsc": null,
+  "PaidHours": null,
+  "WaterYr1": null,
+  "GasElecYr1": null,
+  "ElecExtra": 0,
+  "RepairsYr1": null,
+  "Insurance": null,
+  "CardFeePct": null,
+  "POS": null,
+  "TeleAlarmTrash": null
+ },
+ "notes": {
+  "Price": "Listing ask (source, listing number). Change to test offers.",
+  "SelfServe": "Broker P&L $x/mo. Verify with 24-36 months of card-system reports."
+ },
+ "broker_pnl": {
+  "source": "broker proforma P&L dated MM-DD-YY x 12",
+  "stated_noi": null,
+  "stated_noi_note": "Check whether the P&L total equals its own lines added up.",
+  "lines": {
+   "ss": {"amount": null},
+   "wf": {"amount": null},
+   "anc": {"amount": null},
+   "rent": {"amount": null},
+   "wages": {"amount": null},
+   "burden": {"amount": 0, "why": "P&L shows N/A. Legally required."},
+   "water": {"amount": null},
+   "gas": {"amount": null},
+   "rep": {"amount": null},
+   "ins": {"amount": null},
+   "card": {"amount": null},
+   "pos": {"amount": null},
+   "wfs": {"amount": null},
+   "cogs": {"amount": null},
+   "tel": {"amount": null},
+   "misc": {"amount": null}
+  }
+ },
+ "valuation": {"offer_multiple": 3.0, "walk_multiple": 3.5},
+ "comps_source": "Full table: <deal folder>/comps.csv",
+ "comps": [
+  ["<Store> (SUBJECT, broker figures)", null, null, null, "sf; washers/dryers and age; lease left, rent", "Asking", "<listing url>"]
+ ],
+ "cases": {
+  "plan": {"OwnerHours": 22, "OwnerHoursLater": 10, "MgrHours": 40},
+  "bear": {"SelfServe": null, "SSGrowth": 0.02, "WFLbsMonth": null, "AncRealize": 0.7, "RepairsYr1": null, "CapexScenario": 4, "RetoolLift": 0.0, "ExitMult": 1.5},
+  "bull": {"UtilCont": 0, "AncRealize": 1.0, "SelfServe": null, "SSGrowth": 0.035, "DelivLbsRamp": 1500, "DelivLbsFull": 4000, "RetoolLift": 0.10, "ExitMult": 2.5}
+ },
+ "snapshot_extra": []
+}

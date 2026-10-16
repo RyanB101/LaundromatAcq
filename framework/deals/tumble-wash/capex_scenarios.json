@@ -1,0 +1,29 @@
+[
+ {
+  "label": "Keep & repair; replace as machines wear out (yr 4, yr 11)",
+  "by_year": {
+   "4": 372500,
+   "11": 171000
+  }
+ },
+ {
+  "label": "Washers at close; dryers as they wear out (yr 0, yr 11)",
+  "by_year": {
+   "0": 363188,
+   "11": 171000
+  }
+ },
+ {
+  "label": "Full retool at close (yr 0)",
+  "by_year": {
+   "0": 529912
+  }
+ },
+ {
+  "label": "Bear: fleet 3 yrs older than stated (yr 1, yr 8)",
+  "by_year": {
+   "1": 372500,
+   "8": 171000
+  }
+ }
+]

@@ -1,0 +1,424 @@
+{
+ "name": "Tumble Wash Laundromat",
+ "address": "1147 Summit Ave, Jersey City NJ",
+ "listing": "BizBuySell #2564518",
+ "as_of": "2026-10-16",
+ "output": "Tumble_Wash_Underwriting_Model.xlsx",
+ "horizon_years": 17,
+ "year1_calendar": 2027,
+ "inputs": {
+  "Price": 450000,
+  "AllocEquip": 60000,
+  "AllocLHI": 25000,
+  "AllocNoncompete": 15000,
+  "SelfServe": 216000,
+  "WFLbsMonth": 8000,
+  "WFPrice": 1.25,
+  "WFPriceNew": 1.5,
+  "DryClean": 6000,
+  "ATM": 6000,
+  "SoapVend": 15000,
+  "SnackVend": 7200,
+  "GameVend": 6000,
+  "RentYr1": 33096,
+  "PaidHours": 91,
+  "WaterYr1": 32400,
+  "GasElecYr1": 32400,
+  "RepairsYr1": 12000,
+  "CardFeePct": 0.0143,
+  "POS": 6600,
+  "TeleAlarmTrash": 2595,
+  "LoanAmt": 500000
+ },
+ "notes": {
+  "Price": "Listing ask (BizBuySell #2564518). Change to test offers.",
+  "AllocEquip": "Estimate: ~69 machines at 15 yrs old; support with a distributor appraisal. Seller will want this low (recapture).",
+  "SelfServe": "P&L $18,000/mo; listing $4,150/wk. Verify with 24 months of CCI card-system reports.",
+  "WFLbsMonth": "P&L ~8,000 lb/mo (listing 1,846 lb/wk). Verify in Cents POS.",
+  "WFPrice": "P&L/listing. Local range $1.00-1.25; delivery $1.25-1.49 (research/opex.md).",
+  "WFPriceNew": "Assumption: raise to $1.50 (CLA survey mode $1.50-1.99).",
+  "DryClean": "P&L $500/mo.",
+  "ATM": "P&L $500/mo. Seller-owned ATM included. Verify.",
+  "SoapVend": "P&L $1,250/mo. NJ sales tax applies to detergent; confirm whether P&L figure is net of tax.",
+  "SnackVend": "P&L $600/mo.",
+  "GameVend": "P&L $500/mo. Unverifiable cash; verify.",
+  "RetoolLift": "Equipment thread base case (5%).",
+  "RentYr1": "$2,758/mo per listing; +~3%/yr; ~17 yrs left. Confirm escalation date and that sewer is truly included (P&L says so).",
+  "RentEsc": "Listing: approx. 3%/yr.",
+  "PaidHours": "P&L: 91 hrs/wk (store open 112, 21 unattended).",
+  "Wage": "NJ minimum wage $16.48 from 1/1/2027; local attendants ~$16.50-18 (research/opex.md). P&L uses $16.50.",
+  "Burden": "research/opex.md: ~16% all-in. P&L shows N/A for payroll tax and WC.",
+  "WaterYr1": "P&L $2,700/mo. JCMUA rates rise ~5%/yr (2026 $17.82 per 1,000 gal combined).",
+  "GasElecYr1": "P&L $2,700/mo on the 'Gas' line, electric marked 'Inc'. Our read: one combined PSE&G bill. If electric is extra, add it in the next row.",
+  "ElecExtra": "Set to ~$10-15k if 12 months of PSE&G bills show electric is billed separately.",
+  "UtilCont": "Assumption until 12-24 months of bills are reviewed.",
+  "UtilInfl": "PSE&G/JCMUA trend (research/opex.md).",
+  "UtilSave": "Equipment thread: new washers ~25% less water/energy; blended ~20%.",
+  "RepairsYr1": "P&L $5,400/yr looks owner-subsidized; equipment thread ~$8k + parts/outside techs.",
+  "RepairsAging": "Equipment thread.",
+  "Insurance": "Estimate $5-9k (research/opex.md). P&L shows $2,880.",
+  "CardFeePct": "P&L $400/mo on $28k/mo laundry revenue.",
+  "POS": "P&L $350 + $200/mo.",
+  "WFSupplyLb": "P&L $300/mo / 8,000 lb.",
+  "VendCOGS": "P&L $625/mo on $1,850/mo.",
+  "DCCost": "P&L $250 on $500.",
+  "TeleAlarmTrash": "P&L $120+$30+$35/mo + $375 fire alarm.",
+  "MiscSupplies": "P&L $150/mo.",
+  "ProFees": "Not in P&L. Two depreciation books (federal + NJ) and a partnership return.",
+  "Licenses": "Not in P&L.",
+  "Marketing": "Not in P&L.",
+  "OwnerHours": "Assumption. 500+ hrs/yr (~10/wk) is the material-participation test. Broker: plan 10-15 hrs/wk even 'absentee'.",
+  "HandoffYear": "Ryan: full-time in Year 1, then train staff to take over.",
+  "OwnerHoursLater": "Default 40 = no hand-off. Ryan's plan: ~10 (management, books, marketing, contracts).",
+  "MgrPremium": "~$22/hr vs $17.50 attendant (research/opex.md range).",
+  "DelivLbsRamp": "Default 0 = off. Plan: 2,000 lb/mo.",
+  "DelivLbsFull": "Default 0 = off. Plan: 5,000 lb/mo (e.g. ~60 residential customers + 2-4 Airbnb/gym/restaurant accounts).",
+  "DelivPrice": "Jersey City delivery $1.25-1.49 at local stores, app services ~$2.65 (research/opex.md); commercial linens taxable 6.625% (passed through).",
+  "CapexScenario": "Equipment thread (revised): washers ~15 yrs old vs 12-15 yr CLA average, so replace in yrs 1-4; base yr 4 (/mnt/project-files/equipment/README.md s.2).",
+  "EquipLife": "Asset class 57.0 = 5-yr (research/tax.md). Confirm with CPA.",
+  "NJ179": "NJ decoupled: $25k cap, no bonus (GIT-DEP).",
+  "RyanFed": "Placeholder. Depends on Ryan's other income. Please confirm.",
+  "RyanOtherInc": "Structure memo: ~$50k role at the parents' practice. Losses above this become an NOL carryforward.",
+  "EBLSingle": "Rev. Proc. 2025-32.",
+  "SSBase": "SSA. Grown with wages in the model.",
+  "ParentFed": "Assumed top bracket (physicians). Confirm.",
+  "LoanAmt": "Structure memo: ~$500k AFR note, interest-only.",
+  "LoanRate": "Oct 2026 mid-term AFR 4.61% (Rev. Rul. 2026-19); long-term 5.22%.",
+  "RyanSalary": "Assumption; grows with wages. Must be defensible for ~40 hrs/wk management + attendant work.",
+  "SCorpPayroll": "15.3% + ~3.0% (research/opex.md); JC 1% does not apply if Ryan lives in Jersey City."
+ },
+ "broker_pnl": {
+  "source": "proforma P&L dated 10-4-26 x 12 (photo IMG_1029)",
+  "stated_noi": 177720,
+  "stated_noi_note": "P&L TOTAL omits vending COGS, dry cleaning cost and card fees ($1,275/mo). Lines added correctly give $162,420.",
+  "lines": {
+   "ss": {
+    "amount": 216000,
+    "why": "Same; verify with CCI reports."
+   },
+   "wf": {
+    "amount": 120000,
+    "why": "Same in Year 1; price increase starts Year 2."
+   },
+   "anc": {
+    "amount": 40200,
+    "why": "Haircut on unverifiable cash lines."
+   },
+   "rev": {
+    "why": "Listing says $372k; P&L sums to $376k."
+   },
+   "rent": {
+    "amount": 33096
+   },
+   "wages": {
+    "amount": 78084,
+    "why": "P&L: 91 hrs x $16.50. 2027 NJ minimum wage is $16.48, so $17.50 to keep staff."
+   },
+   "burden": {
+    "amount": 0,
+    "why": "P&L shows N/A. Legally required."
+   },
+   "water": {
+    "amount": 32400,
+    "why": "Plus 10% contingency until bills are seen."
+   },
+   "gas": {
+    "amount": 32400,
+    "why": "Electric marked 'Inc'; confirm with bills."
+   },
+   "rep": {
+    "amount": 5400,
+    "why": "15-yr fleet; seller likely does own repairs unpaid."
+   },
+   "ins": {
+    "amount": 2880,
+    "why": "$240/mo is too low for property + GL + equipment breakdown."
+   },
+   "card": {
+    "amount": 4800
+   },
+   "pos": {
+    "amount": 6600
+   },
+   "wfs": {
+    "amount": 3600
+   },
+   "cogs": {
+    "amount": 10500
+   },
+   "tel": {
+    "amount": 2220,
+    "why": "Underwritten adds the $375/yr fire alarm noted on the P&L."
+   },
+   "misc": {
+    "amount": 1800
+   },
+   "pro": {
+    "amount": 0,
+    "why": "Not in P&L."
+   },
+   "lic": {
+    "amount": 0,
+    "why": "Not in P&L."
+   },
+   "psvc": {
+    "amount": 0,
+    "why": "Not in P&L."
+   },
+   "mkt": {
+    "amount": 0,
+    "why": "Not in P&L."
+   },
+   "cont": {
+    "amount": 0,
+    "why": "1% of revenue."
+   },
+   "opex": {
+    "why": "Broker's lines add to $17,815/mo; the P&L's TOTAL says $16,540."
+   },
+   "ebitda": {
+    "why": "Broker's lines, added correctly: $162,420, not $177,720."
+   }
+  }
+ },
+ "valuation": {
+  "offer_multiple": 3.0,
+  "walk_multiple": 3.5,
+  "multiples": [
+   [
+    "Low (old fleet, NYC metro sold median less)",
+    2.5
+   ],
+   [
+    "Sold-listing median, NYC metro",
+    3.3
+   ],
+   [
+    "National closed-deal median (BizBuySell 2021-25)",
+    3.5
+   ],
+   [
+    "Rule of thumb, 15+ yr lease, low rent",
+    4.0
+   ]
+  ],
+  "source": "Sources: underwriting/research/comps.md (BizBuySell Insight 855 deals; 28 NYC-metro listings; Laundromat Resource rules of thumb)"
+ },
+ "comps_source": "Full table: /mnt/project-files/underwriting/research/comps.md",
+ "comps": [
+  [
+   "Jersey City (SUBJECT, broker figures)",
+   450000,
+   372000,
+   177000,
+   "~2,000 sf; 33W/36D ~15 yr; 17 yr lease, $2,758/mo",
+   "Asking",
+   "https://www.bizbuysell.com/business-opportunity/profitable-laundromat-run-absentee-high-revenue-jersey-city-nj-450k/2564518/"
+  ],
+  [
+   "Hudson County, NJ",
+   550000,
+   294000,
+   102000,
+   "48 machines, energy-efficient",
+   "Sold*",
+   "https://www.hedgestone.com/business-opportunity/63086/profitable-absentee-run-laundromat-for-sale-in-new-jersey/"
+  ],
+  [
+   "Hudson County, NJ (downtown)",
+   50000,
+   104000,
+   43000,
+   "15W/16D; ~5.5 yr lease left",
+   "Sold*",
+   "https://www.vestedbb.com/very-successful-laundromat-for-sale-in-hudson-county-new-jersey-listing-id-7091"
+  ],
+  [
+   "Bayonne, NJ",
+   179000,
+   175000,
+   16000,
+   "Search-page figures only",
+   "Asking",
+   "https://www.bizbuysell.com/business-opportunity/laundromat-in-great-location-excellent-potential-bayonne-nj-179-000/2556056/"
+  ],
+  [
+   "Bergen County, NJ (plaza)",
+   950000,
+   498922,
+   173422,
+   "4,000 sf; 50W/52D 3-7 yr; lease to 2041; rent 24%",
+   "Asking",
+   "https://www.bizbuysell.com/business-opportunity/4-000-sf-laundromat-for-sale-busy-shopping-plaza-with-parking/2521410/"
+  ],
+  [
+   "Union County, NJ",
+   650000,
+   416000,
+   150000,
+   "2,800 sf; 41W/46D",
+   "Sold*",
+   "https://www.hedgestone.com/business-opportunity/62794/coin-operated-new-jersey-laundromat-for-sale/"
+  ],
+  [
+   "Bergen County, NJ",
+   110000,
+   153000,
+   58045,
+   "",
+   "Sold*",
+   "https://www.vestedbb.com/great-laundromat-for-sale-in-bergen-county-new-jersey-listing-id-7167"
+  ],
+  [
+   "Ridgefield Park, NJ (24-hr)",
+   275000,
+   null,
+   52000,
+   "Unattended",
+   "Asking",
+   "https://www.bizbuysell.com/business-opportunity/stress-free-absentee-laundromat-open-24-hours/2560849/"
+  ],
+  [
+   "Paterson, NJ",
+   295000,
+   300000,
+   null,
+   "20-25 yr equipment; '2x net'",
+   "Sold*",
+   "https://www.laundromat-broker.com/listings.html"
+  ],
+  [
+   "South NJ (near Waterford)",
+   297500,
+   190000,
+   90000,
+   "19 mo lease left",
+   "Sold* 2025",
+   "https://www.laundromat-broker.com/listings.html"
+  ],
+  [
+   "Bronx, NY (same broker template)",
+   450000,
+   400000,
+   177000,
+   "32W/34D 11-12 yr; 3 yr lease",
+   "Asking",
+   "https://www.bizbuysell.com/business-opportunity/absentee-and-high-volume-laundromat-excellent-profit-bronx-ny-450k/2564395/"
+  ],
+  [
+   "Park Slope, Brooklyn",
+   799000,
+   467000,
+   156000,
+   "Newer equipment, long lease",
+   "Asking",
+   "https://www.bizbuysell.com/new-york/new-york-city-metro-area/laundromats-and-coin-laundry-businesses-for-sale/"
+  ],
+  [
+   "Queens (prime)",
+   589999,
+   420000,
+   130000,
+   "64 machines; new 10-yr lease",
+   "Asking",
+   "https://www.bizbuysell.com/new-york/new-york-city-metro-area/laundromats-and-coin-laundry-businesses-for-sale/"
+  ],
+  [
+   "Prospect Park 11226",
+   449300,
+   null,
+   160840,
+   "75 machines; 12 yr lease",
+   "Asking",
+   "https://www.bizbuysell.com/new-york/new-york-city-metro-area/laundromats-and-coin-laundry-businesses-for-sale/"
+  ],
+  [
+   "Brooklyn 11219",
+   349500,
+   null,
+   112950,
+   "41 machines; 15-yr lease option",
+   "Asking",
+   "https://www.bizbuysell.com/new-york/new-york-city-metro-area/laundromats-and-coin-laundry-businesses-for-sale/"
+  ]
+ ],
+ "benchmarks_extra": [
+  [
+   "BizBuySell EDGE, NJ laundromat listings: revenue (25th / median / 75th pct)",
+   "$172K / $312K / $495K (listing PDF, 10/14/2026)"
+  ],
+  [
+   "BizBuySell EDGE, NJ laundromat listings: SDE (25th / median / 75th pct)",
+   "$62.5K / $107K / $246K"
+  ],
+  [
+   "BizBuySell EDGE, operating NJ laundromats 2024 averages",
+   "Revenue $570K; SDE $127K; EBITDA $81K (14% of revenue)"
+  ]
+ ],
+ "cases": {
+  "plan": {
+   "OwnerHours": 22,
+   "OwnerHoursLater": 10,
+   "MgrHours": 40
+  },
+  "bear": {
+   "SelfServe": 194400,
+   "SSGrowth": 0.02,
+   "WFLbsMonth": 7200,
+   "WFPriceNew": 1.4,
+   "AncRealize": 0.7,
+   "ElecExtra": 12000,
+   "RepairsYr1": 15000,
+   "CapexScenario": 4,
+   "RetoolLift": 0.0,
+   "ExitMult": 1.5
+  },
+  "bull": {
+   "UtilCont": 0,
+   "AncRealize": 1.0,
+   "WFPriceNew": 1.65,
+   "SelfServe": 226800,
+   "SSGrowth": 0.035,
+   "RepairsYr1": 8000,
+   "DelivLbsRamp": 1500,
+   "DelivLbsFull": 4000,
+   "RetoolLift": 0.1,
+   "ExitMult": 2.5
+  }
+ },
+ "snapshot_extra": [
+  [
+   "Electric billed separately (+$12k/yr)",
+   {
+    "ElecExtra": 12000
+   }
+  ],
+  [
+   "Your plan + staffed delivery/commercial (5,000 lb/mo)",
+   {
+    "OwnerHours": 22,
+    "OwnerHoursLater": 10,
+    "MgrHours": 40,
+    "DelivLbsRamp": 2000,
+    "DelivLbsFull": 5000
+   }
+  ],
+  [
+   "Broker's expense assumptions",
+   {
+    "Wage": 16.5,
+    "Burden": 0,
+    "Insurance": 2880,
+    "RepairsYr1": 5400,
+    "UtilCont": 0,
+    "AncRealize": 1,
+    "ProFees": 0,
+    "Licenses": 0,
+    "PayrollSvc": 0,
+    "Marketing": 0,
+    "ContPct": 0
+   }
+  ]
+ ]
+}
