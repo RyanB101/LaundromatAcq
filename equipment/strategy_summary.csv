@@ -1,0 +1,4 @@
+strategy,capex_total,capex_yr0,pv_capex,pv_opex_net,pv_terminal,pv_cost_pretax,pv_tax_shield_capex,pv_cost_aftertax
+run_to_failure,483000,0,303281,1652638,12880,1943039,136374,1046947
+washers_now,475150,306150,378631,1579117,10900,1946849,170250,1050679
+retool_now,470925,470925,470925,1436930,3633,1904221,211534,1032131
