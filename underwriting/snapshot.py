@@ -22,6 +22,9 @@ CASES = [
     ("No lease renewal (exit value $0)", {"ExitMult": 0}),
     ("Your plan: you 22 hrs/wk Yr 1, ~10 after; day manager from Yr 2", {"OwnerHours": 22, "OwnerHoursLater": 10, "MgrHours": 40}),
     ("Your plan + staffed delivery/commercial (5,000 lb/mo)", {"OwnerHours": 22, "OwnerHoursLater": 10, "MgrHours": 40, "DelivLbsRamp": 2000, "DelivLbsFull": 5000}),
+    ("BEAR case (cases.py)", {"OwnerHours": 22, "OwnerHoursLater": 10, "MgrHours": 40, "SelfServe": 194400, "SSGrowth": 0.02, "WFLbsMonth": 7200, "WFPriceNew": 1.40, "AncRealize": 0.7, "ElecExtra": 12000, "RepairsYr1": 15000, "CapexScenario": 4, "RetoolLift": 0.0, "ExitMult": 1.5}),
+    ("BASE case (cases.py)", {"OwnerHours": 22, "OwnerHoursLater": 10, "MgrHours": 40}),
+    ("BULL case (cases.py)", {"OwnerHours": 22, "OwnerHoursLater": 10, "MgrHours": 40, "UtilCont": 0, "AncRealize": 1.0, "WFPriceNew": 1.65, "SelfServe": 226800, "SSGrowth": 0.035, "RepairsYr1": 8000, "DelivLbsRamp": 1500, "DelivLbsFull": 4000, "RetoolLift": 0.10, "ExitMult": 2.5}),
     ("Broker's expense assumptions", {"Wage": 16.5, "Burden": 0, "Insurance": 2880, "RepairsYr1": 5400, "UtilCont": 0,
                                       "AncRealize": 1, "ProFees": 0, "Licenses": 0, "PayrollSvc": 0, "Marketing": 0, "ContPct": 0}),
 ]

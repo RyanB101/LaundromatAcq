@@ -147,7 +147,7 @@ I("DriverHours", "Driver hours per week once the program runs", 20, NUM, "Part-t
 I("DriverWage", "Driver wage per hour", 20.00, USD2, "Assumption.")
 I("VehicleCost", "Van lease, fuel, commercial auto insurance per year", 12000, USD, "Assumption ~$1,000/mo. Alternative: per-stop courier.")
 S("Equipment capital plan")
-I("CapexScenario", "Capex scenario (1 = keep & repair, retool washers yr 8 / dryers yr 11; 2 = washers now, dryers yr 11; 3 = full retool at close)", 1, NUM, "Equipment thread recommends 1 (/mnt/project-files/equipment/README.md).", True)
+I("CapexScenario", "Capex scenario (1 = keep & repair, washers yr 8 / dryers yr 11; 2 = washers now, dryers yr 11; 3 = full retool at close; 4 = bear: washers yr 3, dryers yr 8)", 1, NUM, "Equipment thread recommends 1 (/mnt/project-files/equipment/README.md).", True)
 I("CapexInfl", "Equipment price inflation per year (capex schedule is in today's dollars)", 0.03, PCT, "Assumption.")
 I("EquipLife", "Federal/NJ MACRS recovery period for machines (5 or 7)", 5, NUM, "Asset class 57.0 = 5-yr (research/tax.md). Confirm with CPA.")
 I("Bonus", "Federal bonus depreciation %", 1.0, PCT, "OBBBA: 100% permanent for property acquired after 1/19/2025; used property from unrelated seller qualifies.")
@@ -236,10 +236,10 @@ R["year"] = r
 r += 2
 section(dep, r, "Capex schedule by scenario (today's $; source: equipment thread capex_schedule.csv)", 2 + N + 1)
 r += 1
-capex_csv = {1: {8: 372500, 11: 171000}, 2: {0: 363188, 11: 171000}, 3: {0: 529912}}
-labels = {1: "1  Keep & repair; washers yr 8, dryers yr 11", 2: "2  Washers at close; dryers yr 11", 3: "3  Full retool at close"}
+capex_csv = {1: {8: 372500, 11: 171000}, 2: {0: 363188, 11: 171000}, 3: {0: 529912}, 4: {3: 372500, 8: 171000}}
+labels = {1: "1  Keep & repair; washers yr 8, dryers yr 11", 2: "2  Washers at close; dryers yr 11", 3: "3  Full retool at close", 4: "4  Bear: washers fail early (yr 3), dryers yr 8"}
 first_cap = r
-for s in (1, 2, 3):
+for s in (1, 2, 3, 4):
     dep.cell(r, 2, labels[s]).font = BLACK
     for y in range(0, N + 1):
         c = dep.cell(r, 3 + y, capex_csv[s].get(y, 0))
@@ -251,7 +251,7 @@ R["capex_sel"] = r
 dep.cell(r, 2, "Selected scenario capex (inflated)").font = BOLD
 for y in range(0, N + 1):
     col = ycol(y)
-    c = dep.cell(r, 3 + y, f"=INDEX({col}{first_cap}:{col}{first_cap+2},CapexScenario)*(1+CapexInfl)^{col}${R['year']}")
+    c = dep.cell(r, 3 + y, f"=INDEX({col}{first_cap}:{col}{first_cap+3},CapexScenario)*(1+CapexInfl)^{col}${R['year']}")
     c.number_format = USD
 r += 1
 R["frac"] = r
