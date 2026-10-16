@@ -32,16 +32,19 @@ def run(over):
 res = {k: run(o) for k, o in CASES.items()}
 # Forced sale: decide ~month 6, close ~month 12 (laundromats take 3-9 months to sell).
 EXIT = {"bear": (2.0, 2.5), "base": (2.75, 3.25), "bull": (3.25, 3.75)}  # quick-sale / likely multiple of buyer-verified absentee NOI
+EQUIP_RECOVERY = 0.5
 BUY_COSTS, WC, BROKER, SELL_LEGAL, RATE = 20000, 10000, 0.10, 7500, 0.22 + 0.0637
 for k, r in res.items():
     noi1, sde1 = r["noi"][1], r["sde"][1]
     e = {}
     for tag, m in zip(("quick", "likely"), EXIT[k]):
-        price = m * noi1
+        # Machines replaced before the sale (bear: washers die in yr 1) are cash out; a buyer pays back ~half via a higher price.
+        capex_pre = -sum(r["capex"][:2])
+        price = m * noi1 + EQUIP_RECOVERY * capex_pre
         fee = max(BROKER * price, 25000)
         proceeds = price - fee - SELL_LEGAL
-        pretax = -(450000 + BUY_COSTS + WC) + sde1 + proceeds + WC
-        e[tag] = dict(mult=m, price=price, fee=fee, proceeds=proceeds, pretax=pretax,
+        pretax = -(450000 + BUY_COSTS + WC) - capex_pre + sde1 + proceeds + WC
+        e[tag] = dict(mult=m, capex_pre=capex_pre, price=price, fee=fee, proceeds=proceeds, pretax=pretax,
                       aftertax_approx=pretax * (1 - RATE) if pretax < 0 else pretax)
     r["exit"] = e
 json.dump({"cases": CASES, "results": res}, open(os.path.join(HERE, "cases.json"), "w"), indent=1, default=float)
