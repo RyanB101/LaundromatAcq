@@ -1,6 +1,13 @@
 # Equipment: repair or replace (Jersey City laundromat)
 
-Status: **fleet now taken from the likely listing (BizBuySell #2564518, not yet confirmed as yours).** The listing gives 33 washers (13 x 20 lb, 15 x 40 lb, 5 x 60 lb) and 34 dryers listed as "30 lb double-stack", all about 15 years old, brands not stated. I read "34 units" as 34 pockets (17 stacks). If it means 34 stacks, a full retool costs about $160k more. Revenue per machine is split from the listing's ~$4,150/week self-serve. Utility cost per machine is an estimate (about 20% of revenue). Brands, exact ages and condition still need the data plate photos.
+Status: **fleet confirmed from the listing (BizBuySell #2564518, Tumble Wash Laundromat), the broker's proforma P&L and Ryan's 12 photos.** Data plates not yet photographed, so exact ages are still the seller's "about 15 years".
+
+What the photos and P&L show:
+- **Washers:** 33 Speed Queen stainless front-load *hardmount* washer-extractors (13 x 20 lb, 15 x 40 lb, 5 x 60 lb). They have the older keypad/LED control panels (pre-Quantum), consistent with roughly 2010-2011 build, and card readers on each. They're bolted on a raised tiled concrete curb, numbered at least to 25. They look clean and well kept.
+- **Dryers:** white 30 lb double-stack dryers with card readers, brand not legible in the photos. The P&L says 36 dryers and the listing 34. I model 18 stacks (36 pockets), which fits the long dryer wall in the photos.
+- **Other equipment:** CCI card system with Cents POS for wash and fold, a seller-owned ATM (included), a soda vending machine, an arcade cabinet, folding tables, carts, TVs, cameras and auto-lock doors.
+- **Utilities and upkeep in the P&L:** maintenance $450/mo ($5.4k/yr), gas $2,700/mo, water $2,700/mo, and sewer included in rent. **Electric has no line in the P&L**: the building has one meter, the landlord pays $340 and the store pays the rest. That's a missing expense for the underwriting model. Separate metering is possible at extra cost.
+- **Building:** ground floor of a 3-story brick building with apartments above (1147 on the awning; the street photo suggests Summit Ave, inferred). Any new dryer venting, gas or electrical work needs landlord consent and touches a residential building, so permits will get a closer look.
 
 Files in this folder:
 - `fleet_inputs.csv`: one row per machine type (count, age, installed cost, life, repair, revenue, utility). Edit this.
@@ -14,24 +21,30 @@ Files in this folder:
 2. **The machines you're buying with the store also get 100% bonus.** Used property qualifies if you (or a predecessor) didn't use it before and you didn't buy it from a related party. Buying the existing washers and dryers from an unrelated seller qualifies. So whatever part of the purchase price is allocated to equipment on Form 8594 is written off federally in year one, with no need to buy new machines to get a deduction. This makes the **purchase price allocation** (equipment vs. goodwill, which is amortized over 15 years) the biggest equipment-related tax lever. That belongs in the underwriting and structure threads, and the seller will push the other way because equipment allocation creates depreciation recapture for them.
 3. **The deduction only helps if someone can use it.** If the owners don't materially participate, a large equipment write-off becomes a suspended passive loss. That's the structure thread's question (your hours vs. your parents' returns), but it decides whether "replace now for the write-off" is worth anything at all.
 4. **New Jersey doesn't follow federal bonus.** NJ Gross Income Tax allows only a $25,000 Sec. 179 deduction and recovers the rest over regular MACRS lives ([Monaco CPA summary of GIT-DEP](https://www.monacocpa.cpa/post/section-179-bonus-depreciation-nj)). Budget for a separate NJ depreciation schedule.
-5. **What actually decides it is fleet age and revenue, not tax.** With this ~15-year-old fleet, replacing early wins, but because the machines are worn out, not because of the write-off (table below). New machines pay off through lower water, sewer and gas, fewer broken machines, and the ability to raise vend prices or add larger pockets, not through the write-off.
+5. **What actually decides it is how long these machines really last.** Speed Queen hardmount washers commonly run 20 to 25 years with routine upkeep, and this store spends only about $5k a year on maintenance. Calibrated to that, **keeping and repairing the current fleet beats replacing it now** in every case I ran (table below). New machines pay off through lower water, sewer and gas, fewer broken machines and higher vend prices, not through the write-off, and at this fleet's age and upkeep that isn't enough yet.
 
-## 2. Model results (listing fleet, after-tax PV of 17 years of equipment cost, lower is better)
+## 2. Model results (actual fleet, after-tax PV of 17 years of equipment cost, lower is better)
 
-| Scenario | Run to failure | Washers now, dryers as they fail | Retool now |
+| Washer useful life / revenue lift from new washers | Run to failure | Washers now, dryers as they fail | Retool now |
 |---|---|---|---|
-| Base: 15-yr washer life, 5% revenue lift | $792k | $802k | **$774k** |
-| No revenue lift | $812k | $823k | **$794k** |
-| 10% revenue lift | $772k | $782k | **$753k** |
-| Washers last 20 yrs, 5% lift | $831k | $797k | **$768k** |
+| 22 yrs (base), 5% lift | **$495k** | $556k | $604k |
+| 18 yrs, 0% lift (pessimistic for old machines) | **$540k** | $583k | $630k |
+| 18 yrs, 10% lift | **$508k** | $542k | $590k |
+| 25 yrs, 10% lift | **$477k** | $533k | $581k |
 
-At about 15 years old, this fleet is at or near the end of its economic life, and **retooling in year one is the cheapest option in every case I tested**, by $20k to $60k of present value. Running to failure isn't really an option: it means replacing nearly all washers within a year or two anyway, just unplanned. The full retool costs about **$521k installed** (about $678k if the dryers are 34 stacks). Washers only cost about **$363k**. `capex_schedule.csv` has the timing for each option.
+**Keep and repair the current machines, and plan a washer retool around years 5 to 8 and dryers around year 10.** That beats replacing now by about $35k to $110k of present value. The planned path (`capex_schedule.csv`) is about $373k of washers at year 8 and $171k of dryers at year 11 in today's dollars. A full retool now would cost about $530k installed, or $363k for washers only.
 
-**What this means for the deal:** at $450k asking (2.5 to 3x the $177k cash flow), the price assumes working equipment, but a buyer should expect to spend roughly another $360k to $520k on machines within one to two years. That's a strong argument for a lower price, or for valuing the store as "business plus a retool". It also means little of the price can credibly go to equipment on Form 8594, because 15-year-old machines have low market value. Most of it goes to goodwill, amortized over 15 years, and the big year-one federal write-off comes from the *new* machines instead.
+*Correction to my earlier draft:* before the P&L arrived I assumed repairs on a 15-year-old fleet ran about $60k a year, which made replacing now look best. The P&L shows $5.4k a year, so I recalibrated repairs to about $8k a year today (including some owner labor), rising 8% per year as the fleet ages. If the seller has been doing repairs himself unpaid, or the data plates show the machines are older than stated, push the retool earlier.
 
-Key assumptions (all editable in `model.py`): 8% discount rate (all-cash, cost of equity); 37% federal and 8.97% NJ marginal rates; repair cost grows 12% per year of age; downtime costs $0.60 of revenue per $1 of repair; new washers use 25% less water and energy; washers last 15 years and dryers 22; no replacements in the last 3 years of the lease; used machines worth 35% of remaining life at lease end.
+**What this means for the deal:**
+- Budget a capital reserve of roughly $30k to $35k a year from day one. That covers the ~$540k replacement cycle during the lease, and the underwriting model should deduct it from the $177k cash flow.
+- The machines work, so equipment age is a fair negotiating point, but not a deal-breaker.
+- For Form 8594, 15-year-old Speed Queen hardmounts still have used-market value, so a modest equipment allocation (likely tens of thousands of dollars, to be supported by an appraisal or distributor quote) is defensible and gets 100% bonus federally. The rest goes to goodwill, amortized over 15 years.
+- Before closing, have a Speed Queen distributor technician inspect every machine: bearings, door seals and spin, plus dryer burners and drums. A few hundred dollars buys the real remaining-life answer.
 
-The 17-year lease fits one replacement cycle well. A retool now gets nearly full use of the machines inside the lease.
+Key assumptions (all editable in `model.py`): 8% discount rate (all-cash, cost of equity); 37% federal and 8.97% NJ marginal rates; repair cost about $8k/yr today, growing 8% per year of age; downtime costs $0.60 of revenue per $1 of repair; new washers use 25% less water and energy; washers last 22 years and dryers 25 (from build); no replacements in the last 3 years of the lease; used machines worth 35% of remaining life at lease end.
+
+The 17-year lease fits one replacement cycle well. A washer retool around year 5 to 8 still gets 9 to 12 years of use inside the lease, and the new machines add value if you sell the store or renew.
 
 ## 3. When to repair vs. replace a single machine
 
@@ -56,7 +69,7 @@ Steps for a retool, in order:
    - Electrical service. Washers run on 208/240V single or three phase, and a retool can require new circuits or a service upgrade.
    - Gas line sizing for the dryers, plus makeup air.
    - Dryer exhaust: rigid metal duct with length and elbow limits, individual or properly sized common ducts.
-4. **Mounting.** *Hardmount* washers must be bolted to a reinforced concrete base or pedestal. If you swap brands, the old bolt pattern often won't match, which means cutting or pouring new concrete. *Softmount* washers (spring-suspended) sit on a level slab, cost more per machine but much less to install, and are the easier choice when changing brands or layouts.
+4. **Mounting.** This store's washers are hardmounts on a raised concrete curb. Speed Queen-for-Speed Queen replacements can often reuse the curb and anchors (confirm the bolt pattern for the new model). Switching brands or going softmount likely means rebuilding the curb. *Hardmount* washers must be bolted to a reinforced concrete base or pedestal. If you swap brands, the old bolt pattern often won't match, which means cutting or pouring new concrete. *Softmount* washers (spring-suspended) sit on a level slab, cost more per machine but much less to install, and are the easier choice when changing brands or layouts.
 5. **Permits.** Commercial work in Jersey City falls under the NJ Uniform Construction Code. The "ordinary maintenance" exemption in N.J.A.C. 5:23-2.7 covers swapping *domestic* washers and dryers in dwelling units, and it explicitly excludes alteration or replacement of gas, water and drain piping ([text](https://law.cornell.edu/regulations/new-jersey/N-J-A-C-5-23-2-7)). Expect to pull permits through the Jersey City Division of Construction Code Official (plumbing, electrical, fire/mechanical subcodes as applicable), with inspections at the end. NJ plumbing and gas work must be done by a licensed master plumber, and electrical work by a licensed electrical contractor. The homeowner exemption doesn't apply to a business. The distributor's installer normally pulls the permits.
 6. **Downtime plan.** Retool in phases (one row at a time) to keep the store open, and tell customers in advance.
 
