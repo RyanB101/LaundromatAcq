@@ -46,6 +46,19 @@ Key assumptions (all editable in `model.py`): 8% discount rate (all-cash, cost o
 
 The 17-year lease fits one replacement cycle well. A washer retool around year 5 to 8 still gets 9 to 12 years of use inside the lease, and the new machines add value if you sell the store or renew.
 
+## 2a. What if Congress repeals 100% bonus depreciation before the retool?
+
+**It doesn't change the answer.** I reran the model assuming bonus depreciation is gone for every purchase after year one, so the year-8 washers and year-11 dryers get ordinary 5-year depreciation federally. Running to failure gets about $13k (PV) more expensive ($495k to $508k), but it still beats replacing washers now ($560k) by about $52k and a full retool ($604k) by about $96k. Losing bonus only delays deductions, it doesn't eliminate them, and a deduction pushed out a few years costs only a few percent of its value.
+
+Why the realistic risk is even smaller than that:
+- **Section 179 is a separate, permanent backstop.** It lets you expense equipment up to $2.5M a year (indexed; about $2.56M for 2026) and isn't tied to bonus depreciation. A ~$373k washer retool fits easily. The catch is that Sec. 179 can't exceed taxable income from active trades or businesses. For an LLC that's tested at both the entity and owner level, and owners' wages and other active business income (e.g., your parents' practice) count. Anything over the limit carries forward. Your CPA should confirm how this works in the chosen structure.
+- **100% bonus has had support from both parties.** Democrats enacted it too: the 2010 Tax Relief Act signed by President Obama gave 100% expensing for 2010-2011. Repeal in a future tax bill is possible, especially as a revenue raiser, but changes like this have historically applied only to property acquired after an announced date, with binding-contract protection. You'd likely see it coming and could pull purchases forward then.
+- **NJ is unaffected either way.** NJ already ignores federal bonus.
+
+So the right trigger for the retool stays machine condition and repair cost, not Washington. If a credible repeal bill with a near effective date shows up and the washers are already within a few years of their planned replacement, pulling the purchase forward then is reasonable.
+
+**Reserve note:** the underwriting thread normalized earnings to about $108k a year, not the broker's $177k. A $30k-$35k annual equipment reserve is about a third of that, so it matters for the price.
+
 ## 3. When to repair vs. replace a single machine
 
 Replace when any of these is true:
